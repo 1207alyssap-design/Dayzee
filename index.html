@@ -15,68 +15,109 @@
 
   <!-- 页面容器 -->
   <div class="page-container">
-    <!-- 页面1: 心情选择页 -->
-    <div id="page-mood" class="page active">
+    <!-- 页面0: 欢迎首页 -->
+    <div id="page-welcome" class="page active">
+      <div class="welcome-content">
+        <div class="welcome-logo">DAYZEE</div>
+        <div class="welcome-subtitle">今天来点啥</div>
+        <div class="welcome-slogan">轻松过好每一天</div>
+        <button id="start-btn" class="start-btn">开始探索</button>
+        <div class="welcome-decoration">
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="deco-circle c3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 页面1: 状态选择页 -->
+    <div id="page-status" class="page">
       <div class="muji-header">
+        <button id="back-welcome-btn" class="back-btn">
+          <span>← 返回</span>
+        </button>
         <div class="muji-logo">
           <span class="logo-text">DAYZEE</span>
-          <span class="logo-sub">MOMENT TRACKER</span>
+          <span class="logo-sub">状态选择</span>
         </div>
         <div class="status-line">
           <span class="status-dot"></span>
-          <span class="status-text">ONLINE</span>
+          <span class="status-text">READY</span>
         </div>
       </div>
 
-      <div class="mood-page-content">
-        <div class="title-section">
-          <h1 class="main-title">DAYZEE</h1>
-          <p class="sub-title">今日心情</p>
-          <div class="title-border"></div>
+      <div class="status-page-content">
+        <!-- 场景选择 -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-icon">📍</span>
+            <h3>选择场景</h3>
+          </div>
+          <div class="scene-grid">
+            <div class="scene-card" data-scene="canteen">
+              <span class="card-icon">🍽️</span>
+              <span class="card-label">食堂</span>
+            </div>
+            <div class="scene-card" data-scene="commute">
+              <span class="card-icon">🚶</span>
+              <span class="card-label">通勤</span>
+            </div>
+            <div class="scene-card" data-scene="break">
+              <span class="card-icon">⏳</span>
+              <span class="card-label">课间</span>
+            </div>
+            <div class="scene-card" data-scene="dorm">
+              <span class="card-icon">🏠</span>
+              <span class="card-label">宿舍</span>
+            </div>
+            <div class="scene-card" data-scene="library">
+              <span class="card-icon">📚</span>
+              <span class="card-label">图书馆</span>
+            </div>
+            <div class="scene-card" data-scene="playground">
+              <span class="card-icon">⚽</span>
+              <span class="card-label">操场</span>
+            </div>
+            <div class="scene-card" data-scene="study">
+              <span class="card-icon">💡</span>
+              <span class="card-label">自习室</span>
+            </div>
+          </div>
         </div>
 
-        <div class="mood-selector">
-          <div class="mood-card" data-mood="happy">
-            <div class="mood-icon">😊</div>
-            <div class="mood-label">HAPPY</div>
-            <div class="mood-desc">积极状态</div>
-            <div class="mood-glow"></div>
+        <!-- 行为维度选择 -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-icon">🎯</span>
+            <h3>行为维度</h3>
           </div>
-
-          <div class="mood-card" data-mood="bored">
-            <div class="mood-icon">😐</div>
-            <div class="mood-label">BORED</div>
-            <div class="mood-desc">平淡状态</div>
-            <div class="mood-glow"></div>
-          </div>
-
-          <div class="mood-card" data-mood="low">
-            <div class="mood-icon">😔</div>
-            <div class="mood-label">LOW</div>
-            <div class="mood-desc">低落状态</div>
-            <div class="mood-glow"></div>
-          </div>
-
-          <div class="mood-card" data-mood="excited">
-            <div class="mood-icon">🤩</div>
-            <div class="mood-label">EXCITED</div>
-            <div class="mood-desc">兴奋状态</div>
-            <div class="mood-glow"></div>
+          <div class="action-grid">
+            <div class="action-card" data-action="explore">
+              <span class="card-icon">🔍</span>
+              <span class="card-label">探索</span>
+            </div>
+            <div class="action-card" data-action="observe">
+              <span class="card-icon">👀</span>
+              <span class="card-label">观察</span>
+            </div>
+            <div class="action-card" data-action="interact">
+              <span class="card-icon">🤝</span>
+              <span class="card-label">互动</span>
+            </div>
+            <div class="action-card" data-action="express">
+              <span class="card-icon">🎤</span>
+              <span class="card-label">表达</span>
+            </div>
+            <div class="action-card" data-action="fun">
+              <span class="card-icon">🎲</span>
+              <span class="card-label">趣味</span>
+            </div>
           </div>
         </div>
 
-        <div class="proceed-section">
-          <button id="proceed-btn" class="proceed-btn disabled">
-            <span class="btn-text">开始</span>
-            <span class="btn-arrow">→</span>
-          </button>
-          <p class="proceed-hint">请先选择您的心情</p>
-        </div>
-
-        <div class="footer-info">
-          <span class="info-text">Dayzee v1.0.0</span>
-          <span class="info-divider">|</span>
-          <span class="info-text">Simple Life</span>
+        <div class="generate-section">
+          <button id="generate-btn" class="generate-btn disabled">生成任务</button>
+          <p class="generate-hint">请先选择场景和行为维度</p>
         </div>
       </div>
     </div>
@@ -84,12 +125,12 @@
     <!-- 页面2: Bingo棋盘页 -->
     <div id="page-bingo" class="page">
       <div class="muji-header">
-        <button id="back-btn" class="back-btn">
+        <button id="back-status-btn" class="back-btn">
           <span>← 返回</span>
         </button>
         <div class="muji-logo">
           <span class="logo-text">BINGO</span>
-          <span class="logo-sub">TODAY</span>
+          <span class="logo-sub">今日</span>
         </div>
         <div class="status-line">
           <span class="status-dot active"></span>
@@ -98,6 +139,14 @@
       </div>
 
       <div class="bingo-page-content">
+        <!-- 入口区域 -->
+        <div class="entry-section">
+          <button id="view-moments-btn" class="entry-btn">
+            <span class="entry-icon">📖</span>
+            <span class="entry-text">查看奇遇记录</span>
+          </button>
+        </div>
+
         <!-- 状态栏 -->
         <div class="mission-status">
           <div class="status-item">
@@ -105,14 +154,18 @@
             <span class="status-value" id="current-date">2024.01.01</span>
           </div>
           <div class="status-item">
-            <span class="status-label">心情</span>
-            <span class="status-value mood-badge" id="current-mood">HAPPY</span>
+            <span class="status-label">场景</span>
+            <span class="status-value scene-badge" id="current-scene">食堂</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">行为</span>
+            <span class="status-value action-badge" id="current-action">探索</span>
           </div>
           <div class="status-item">
             <span class="status-label">BINGO</span>
             <span class="status-value highlight" id="bingo-count">0</span>
           </div>
-          <div class="status-item">
+          <div class="status-item full-width">
             <span class="status-label">进度</span>
             <div class="progress-bar">
               <div class="progress-fill" id="progress-fill"></div>
@@ -151,6 +204,40 @@
         </div>
       </div>
     </div>
+
+    <!-- 页面3: 奇遇卡记录页 -->
+    <div id="page-moments" class="page">
+      <div class="muji-header">
+        <button id="back-bingo-btn" class="back-btn">
+          <span>← 返回</span>
+        </button>
+        <div class="muji-logo">
+          <span class="logo-text">MEMORIES</span>
+          <span class="logo-sub">奇遇记录</span>
+        </div>
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span class="status-text">LOADED</span>
+        </div>
+      </div>
+
+      <div class="moments-page-content">
+        <div class="moments-header">
+          <h2>我的奇遇卡片</h2>
+          <span class="moments-count" id="moments-count">共 0 张</span>
+        </div>
+
+        <div class="moments-grid" id="moments-grid">
+          <!-- 动态生成奇遇卡片 -->
+        </div>
+
+        <div class="empty-state" id="empty-moments" style="display: none;">
+          <div class="empty-icon">📭</div>
+          <p class="empty-text">还没有奇遇记录</p>
+          <p class="empty-hint">完成任务后会生成奇遇卡</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- 任务详情弹窗 -->
@@ -164,10 +251,24 @@
         <div class="task-icon-large" id="task-icon">🎲</div>
         <h3 class="task-title" id="task-title">任务标题</h3>
         <p class="task-desc" id="task-desc">任务描述</p>
+        
+        <!-- 记录区域 -->
+        <div class="record-section">
+          <label class="record-label">记录感受</label>
+          <textarea id="task-note" class="record-textarea" placeholder="记录完成感受..."></textarea>
+          <div class="photo-upload">
+            <label for="photo-input" class="upload-label">
+              <span class="upload-icon">📷</span>
+              <span class="upload-text">上传照片</span>
+            </label>
+            <input type="file" id="photo-input" accept="image/*" style="display: none;">
+            <img id="photo-preview" class="photo-preview" style="display: none;">
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button class="action-btn cancel" id="cancel-task">取消</button>
-        <button class="action-btn confirm" id="complete-task">完成</button>
+        <button class="action-btn confirm" id="complete-task">完成并生成奇遇卡</button>
       </div>
     </div>
   </div>
@@ -185,13 +286,45 @@
         <div class="moment-narrative" id="moment-narrative">
           AI生成的生活叙事...
         </div>
+        <div class="moment-note" id="moment-note" style="display: none;"></div>
+        <img id="moment-photo" class="moment-photo" style="display: none;">
         <div class="moment-meta">
           <span class="meta-item" id="moment-date">日期</span>
-          <span class="meta-item" id="moment-mood">心情</span>
+          <span class="meta-item" id="moment-scene">场景</span>
+          <span class="meta-item" id="moment-action">行为</span>
         </div>
       </div>
       <div class="modal-footer">
+        <button class="action-btn save" id="save-moment">保存奇遇卡</button>
         <button class="action-btn share" id="share-moment">分享</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 奇遇卡详情弹窗 -->
+  <div class="modal-overlay" id="moment-detail-modal">
+    <div class="modal-content moment-card">
+      <div class="modal-header">
+        <span class="modal-title">奇遇卡片详情</span>
+        <button class="close-btn" id="close-moment-detail">×</button>
+      </div>
+      <div class="moment-content">
+        <div class="moment-icon" id="detail-icon">✨</div>
+        <h3 class="moment-title" id="detail-title">奇遇时刻</h3>
+        <div class="moment-narrative" id="detail-narrative">
+          AI生成的生活叙事...
+        </div>
+        <div class="moment-note" id="detail-note" style="display: none;"></div>
+        <img id="detail-photo" class="moment-photo" style="display: none;">
+        <div class="moment-meta">
+          <span class="meta-item" id="detail-date">日期</span>
+          <span class="meta-item" id="detail-scene">场景</span>
+          <span class="meta-item" id="detail-action">行为</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="action-btn share" id="share-detail-moment">分享</button>
+        <button class="action-btn delete" id="delete-moment">删除</button>
       </div>
     </div>
   </div>
