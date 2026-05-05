@@ -525,16 +525,24 @@ function checkBingo() {
   
   const lineIds = ['h1', 'h2', 'h3', 'v1', 'v2', 'v3', 'd1', 'd2'];
   
+  // 重新计算Bingo数量，而不是增量计数
+  let count = 0;
+  
   lines.forEach((line, index) => {
     const isComplete = line.every(cell => completedCells.includes(cell));
     const indicator = document.getElementById(lineIds[index]);
     
-    if (isComplete && !indicator.classList.contains('active')) {
+    if (isComplete) {
       indicator.classList.add('active');
-      bingoCount++;
-      document.getElementById('bingo-count').textContent = bingoCount;
+      count++;
+    } else {
+      indicator.classList.remove('active');
     }
   });
+  
+  // 更新Bingo计数
+  bingoCount = count;
+  document.getElementById('bingo-count').textContent = bingoCount;
 }
 
 // 更新进度
